@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Document</title>
+        <style>
+            #btn{
+                padding: 6px;background-color: slategrey;font-weight: bold;color: whitesmoke;
+            }
+            #base{
+                background-color: burlywood;
+            }
+        </style>
+        <script>
+            function doConcat(digitsymbol)
+            {
+                let screxp=document.getElementById("scr").value;
+                screxp+=digitsymbol;
+                document.getElementById("scr").value=screxp;
+            }
+            function doEval()
+            {
+                let screxp=document.getElementById("scr").value;
+                let res=eval(screxp);
+                document.getElementById("scr").value=res;
+            }
+            function doDel()
+            {
+                let screxp=document.getElementById("scr").value;
+                let res=screxp.substr(0,screxp.length-1);
+                document.getElementById("scr").value=res;
+            }
+        </script>
+    </head>
+    <body id="base">
+        <center>
+            <table style=" margin:auto;margin-top: 200px;">
+                <tr>
+                    <th>
+                        <input type="text" id="scr" style="height: 35px;border-radius: 7%;font-weight: bold;" readonly>
+                    </th>
+                </tr>
+            </table>
+            <table style="width: 180px;height: 150px;">
+                <tr>
+                    <th><input type="button" value="7" id="btn" onclick="doConcat(this.value);"></th>
+                    <th><input type="button" value="8" id="btn" onclick="doConcat(this.value);"></th>
+                    <th><input type="button" value="9" id="btn" onclick="doConcat(this.value);"></th>
+                    <th><input type="button" value="+" id="btn" onclick="doConcat(this.value);"></th>
+                </tr>
+                <tr>
+                    <th><input type="button" value="4" id="btn" onclick="doConcat(this.value);"></th>
+                    <th><input type="button" value="5" id="btn" onclick="doConcat(this.value);"></th>
+                    <th><input type="button" value="6" id="btn" onclick="doConcat(this.value);"></th>
+                    <th><input type="button" value="-" id="btn" onclick="doConcat(this.value);"></th>
+                </tr>
+                <tr>
+                    <th><input type="button" value="1" id="btn" onclick="doConcat(this.value);"></th>
+                    <th><input type="button" value="2" id="btn" onclick="doConcat(this.value);"></th>
+                    <th><input type="button" value="3" id="btn" onclick="doConcat(this.value);"></th>
+                    <th><input type="button" value="=" id="btn" onclick="doEval(this.value);"></th>
+                </tr>
+                <tr>
+                    <th><input type="button" value="0" id="btn" onclick="doConcat(this.value);"></th>
+                    <th><input type="button" value="." id="btn" onclick="doConcat(this.value);"></th>
+                    <th><input type="button" value="*" id="btn" onclick="doConcat(this.value);"></th>
+                    <th><input type="button" value="/" id="btn" onclick="doConcat(this.value);"></th>
+                </tr>
+                <tr>
+                    <th><input type="button" value="(" id="btn" onclick="doConcat(this.value);"></th>
+                    <th><input type="button" value=")" id="btn" onclick="doConcat(this.value);"></th>
+                    <th><input type="button" value="<-" id="btn" onclick="doDel();"></th>
+                </tr>
+            </table>
+        </center>
+    </body>
+</html>
